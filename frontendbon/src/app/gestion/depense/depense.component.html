@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Gestion depense</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" [routerLink]="['/add']">Ajouter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" [routerLink]="['/liste']">consulter</a>
+            </li>
+           
+          </ul>
+         <a href="">deconnexion</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-5 p-3">
+        <div class="row">
+
+            <div class="card">
+              
+              <div class="jumbotron">
+               
+                <form (ngSubmit)="newDepense()">
+                    <div class=" col-sm-12 col-md-6 col-lg-4">
+
+                      <div class="alert alert-primary"  role="alert" *ngIf = "message">
+                        <strong>Tous les champs sont obligatoires</strong>
+                      </div>
+
+                      <div class="alert alert-primary "  role="alert" *ngIf="data">
+                        <strong>depenses enrégistrer avec succe</strong>
+                      </div>
+
+                      <label for="nom">nom <span>*</span></label>
+                      <input  [(ngModel)] = "depense.nom" type="text" name="nom" id="nom" class="form-control" value="depense.nom" required="required">
+                    </div> 
+                
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <label for="date">date<span> *</span></label>
+                        <input [(ngModel)] = "depense.date" type="date" name="date" id="date" class="form-control"  value="depense.date" required="required">
+                      </div>
+                
+                      <div class="col-sm-12 col-md-6 col-lg-4">
+
+                        <label for="">montant<span> *</span></label>
+                        <input  [(ngModel)] = "depense.montant" type="number" name="montant" id="montant" class="form-control" value="depense.montant" required="required">
+                      </div>
+                
+                      <div class="col-sm-12 col-md-6 col-lg-4">
+                        <label for="description">description<span> *</span></label>
+                        <textarea [(ngModel)] = "depense.description" type="text" name="description" id="description" cols="30" rows="4"required="required" class="form-control" ></textarea>
+                      </div>
+                
+                      <div class="col-sm-12 col-md-6 col-lg-4 form-group">
+                        <label for="categorie" class="p-2">categorie<span> *</span></label>
+                        <select  name ="categorie_id" [(ngModel)] = "depense.categorie_id">
+                            <option  *ngFor="let item of categories" [ngValue]="item.id"  [label]="item.nom" >categorie</option>
+                        </select>
+                      </div>
+  
+                      <button type="submit" class="btn btn-primary mb-3 ml-3">enregistrer</button>
+                      <button type="reset" class="btn btn-secondary float-left">
+                        Vider <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </button>
+                </form>
+              </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    
+    
+    
+    
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#" >Gestion depense</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+         <a href="">LOgin</a>
+        
+      </div>
+    </nav>
+    <div class="container ">
+      <div class="row">
+        <div class="col-sm-7 mt-4" >
+          <div id="titre">
+            <h1  class="font-weight-bold ">Gestionnaire de depense</h1>
+            <img src="https://juancollazo.net/global/wp-content/uploads/2021/07/php-login-and-authentication-the-definitive-guide.png" alt="">
+          </div>
+        </div>
+              <div class="col-sm-5 mt-5">
+
+
+                <div class="card ">
+                  
+                  <h2 class="text-center mt-3">Compte</h2>
+                  <form (ngSubmit)="insertUser()">
+                    <div class="alert alert-danger"  role="alert" *ngIf = "message">
+                      <strong>tous les champs sont obligatoire <br>et le mot de passe compte 8 caracteres</strong>
+                    </div>
+
+                                       
+                    
+                    <div class="modal-body">
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="input-group mb-3">
+                                  
+                                    <input [(ngModel)] = "user.nom"  type="text" class="form-control"name="nom" id="nom" placeholder="nom" aria-label="Email" aria-describedby="basic-addon1">
+                                  </div>
+                            </div>
+
+                            <div class="col-sm-6">
+
+                                <div class="input-group mb-3">
+                                    
+                                    <input [(ngModel)] = "user.prenom" type="text" class="form-control" name="prenom" id="prenom" placeholder="prenom" aria-label="Password" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                     
+                      
+
+                    <div class="input-group mb-3">
+                        
+                        <input [(ngModel)] = "user.dateNaissance" type="date" class="form-control" name="dateNaissance" id="dateNaissance"  placeholder="dateNaissance" aria-label="Email" aria-describedby="basic-addon1">
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-6">
+                            <div class="input-group mb-3">
+                              <input [(ngModel)] = "user.telephone" type="text" class="form-control" name="telephone" id="telephone"placeholder="telephone" aria-label="Email" aria-describedby="basic-addon1">
+
+                              </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="input-group mb-3">
+                                
+                                <input [(ngModel)] = "user.password" type="password" class="form-control" name="password" id="password"  placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+
+                      <div class="input-group mb-3">
+                        <input [(ngModel)] = "user.email" type="email" class="form-control"  name="email" id="email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+
+                      </div>
+
+                    <button type="submit" class="btn btn-primary btn-block font-weight-bold mt-4">Envoyer</button>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+ </div>
+    <!-- </div> -->
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

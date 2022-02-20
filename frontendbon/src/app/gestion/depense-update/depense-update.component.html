@@ -1,0 +1,69 @@
+ 
+
+ <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Gestion depense</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/liste']">Ajouter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/liste']">consulter</a>
+        </li>
+       
+      </ul>
+     <a href="">deconnexion</a>
+    </div>
+  </div>
+</nav>
+ <div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+          <div class="card p-3 mt-5">
+            <form (ngSubmit)="updateData()">
+              
+                <div class="form-group">
+                  <label for="nom">nom</label>
+                  <input  [(ngModel)] = "depense.nom" type="text" name="nom" id="nom" class="form-control">
+                </div>
+            
+                <div class="form-group">
+                    <label for="date">date</label>
+                    <input [(ngModel)] = "depense.date" type="date" name="date" id="date" class="form-control" >
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="">montant</label>
+                    <input  [(ngModel)] = "depense.montant" type="number" name="montant" id="montant" class="form-control">
+                  </div>
+            
+                  <div class="form-group">
+                    <label for="description">description</label>
+                    <input [(ngModel)] = "depense.description" type="text" name="description" id="description" class="form-control">
+                  </div>
+            
+                  <div class="col-sm-12 col-md-6 col-lg-4 form-group">
+                    <label for="categorie" class="p-2">categorie</label>
+                    <select  name ="categorie_id" [(ngModel)] = "depense.categorie_id">
+                        <option  *ngFor="let item of categories" [ngValue]="item.id"  [label]="item.nom" >categorie</option>
+                    </select>
+                  </div>
+            
+                  
+                <div class="p-3">
+                  <button type="submit" class="btn btn-primary mt-3 mr-5">enregistrer</button>
+                  <button type="submit" class="btn btn-secondary mt-3" [routerLink]="['/liste']">Retour</button>
+                </div>
+                  
+
+               
+            </form>
+          </div>
+        </div> 
+
+ </div>
+ 
